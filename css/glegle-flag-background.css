@@ -1,11 +1,10 @@
 #thread-container > article.bflag-glegle {
     position: relative; overflow: hidden;
     &::before {
-        opacity: 0.01;
+        opacity: 0.01; pointer-events: none;
         content: ""; position: absolute;
         left: 0; top: 0;
         width: 100%; height: 100%;
-        
         background-image: url(https://glegle.gallery/posts/18933.gif);
         background-size: cover;
         background-position: center;
