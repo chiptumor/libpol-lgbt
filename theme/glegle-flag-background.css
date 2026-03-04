@@ -1,7 +1,7 @@
 #thread-container > article.bflag-glegle {
     overflow: hidden;
     &::before { content: "";
-        opacity: 0.01; pointer-events: none;
+        opacity: 0.02; pointer-events: none;
         position: absolute; left: 0; top: 0;
         width: 100%; height: 100%;
         background-image: url(https://glegle.gallery/posts/18933.gif);
