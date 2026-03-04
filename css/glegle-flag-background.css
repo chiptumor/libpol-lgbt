@@ -1,5 +1,5 @@
 #thread-container > article.bflag-glegle {
-    position: relative; overflow: hidden;
+    overflow: hidden;
     &::before {
         opacity: 0.01; pointer-events: none;
         content: ""; position: absolute;
