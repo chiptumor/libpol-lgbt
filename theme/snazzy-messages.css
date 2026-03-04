@@ -11,8 +11,9 @@ article {
     animation: slide 500ms var(--trans);
     &:not(.editing) {
         animation: send 250ms var(--trans);
-        & > .post-container:not(:has(> figure)) { width: 100%;
-            & > blockquote:empty {
+        & > .post-container:not(:has(> figure)):has(> blockquote:empty) {
+            width: 100%;
+            & > blockquote {
                 width: 100%; display: flex; justify-content: center;
                 &::before {
                     content: "\266A\00A0\00A0\00A0\266A\00A0\00A0\00A0\266A" !important;
