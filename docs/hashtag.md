@@ -5,6 +5,7 @@
 List of commands:
 
 - `theme`
+- `tag`
 - `slop`
 - `hug`
 - `gem`
