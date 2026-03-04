@@ -2,15 +2,31 @@
     inherits: false; initial-value: 200%; }
 @property --stop-2 { syntax: "<percentage>";
     inherits: false; initial-value: 200%; }
+@keyframes slide {
+    from { transform: translateX(-100%) }
+    to { transform: translateX(0) }
+}
+@keyframes send {
+    from { transform: scale(1.1) }
+    to { transform: scale(1) }
+}
 article {
+    --trans: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    animation: slide 500ms var(--trans);
+    &:not(.editing) {
+        animation: send 250ms var(--trans);
+    }
     background-image: linear-gradient(to bottom right, transparent,
         var(--stop-1), #FFF1,
         var(--stop-2), transparent);
-    --trans: cubic-bezier(0.230, 1.000, 0.320, 1.000);
-    transition: all 200ms var(--trans),
-        --stop-1 300ms var(--trans), --stop-2 300ms var(--trans);
+    transition:
+        transform 200ms var(--trans), filter 200ms var(--trans),
+        --stop-1 300ms var(--trans), --stop-2 300ms var(--trans)
+        !important;
     &:hover {
+        z-index: 1;
         --stop-1: 50%; --stop-2: 90%;
         background-size: cover;
         transform: skew(1deg, 1deg) scale(1.05) translate(2.5%, 2.5%);
+        filter: drop-shadow(-2px -4px 8px #0004);
 }}
