@@ -16,8 +16,8 @@ article {
                 width: 100%; display: flex;
                 flex-direction: row; justify-content: center;
                 &::before {
-                    content: "\266A\00A0\00A0\00A0\266A\00A0\00A0\00A0\266A" !important; color: #FFF4;
-                    display: block; transform: scale(1.25);
+                    content: "\266A\00A0\00A0\00A0\266A\00A0\00A0\00A0\266A" !important;
+                    color: #FFF4; display: block; transform: scale(1.25);
                 }
             }
         }
