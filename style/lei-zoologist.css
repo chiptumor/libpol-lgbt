@@ -1,7 +1,27 @@
-@keyframes let {
-  from { transform: scale(1) }
-  to { transform: scale(3) }
+@property --size {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: 200px;
 }
-img[src="https://jej.lol/posts/26005.png"] {
-  animation: let 300s;
+@keyframes let {
+    from { --size: 200px }
+    to   { --size: calc(200px * 5) }
+}
+@keyframes opacity { from { opacity: 0 } to { opacity: 1 } }
+figure a:has(img[src="https://jej.lol/posts/26005.png"]) {
+    --anim: 300s linear forwards;
+    animation: let var(--anim);
+    position: relative;
+    &::after {
+        content: "She's gonna get you.";
+        color: white; font-size: calc(var(--size) / 12.5);
+        display: flex; justify-content: center; align-items: center;
+        width: 100%; height: 100%;
+        position: absolute; top: 0; left: 0;
+        animation: opacity var(--anim);
+    }
+    & img {
+        max-width:  var(--size) !important;
+        max-height: var(--size) !important;
+    }
 }
