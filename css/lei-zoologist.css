@@ -1,7 +1,7 @@
-@keyframes lei-zoologist {
+@keyframes let {
   from { transform: scale(1) }
   to { transform: scale(3) }
 }
 img[src="https://jej.lol/posts/26005.png"] {
-  animation: lei-zoologist 300s;
+  animation: let 300s;
 }
