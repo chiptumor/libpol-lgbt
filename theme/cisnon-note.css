@@ -1,0 +1,4 @@
+.bflag-cis:not(:has(~ .bflag-cis))::after {
+    content: "CAUTION: Anon pisses the bed as a fetish exercise. Please beware interacting.";
+    color: #e55e5eAA; font-size: .8em; font-style: italic; padding-right: 8px;
+}
