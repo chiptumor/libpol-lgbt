@@ -2,19 +2,50 @@
     inherits: false; initial-value: 200%; }
 @property --stop-2 { syntax: "<percentage>";
     inherits: false; initial-value: 200%; }
+@property --rotate { syntax: "<angle>";
+    inherits: false; initial-value: 0deg; }
+@property --wave-1 { syntax: "<percentage>";
+    inherits: false; initial-value: 25%; }
+@property --wave-2 { syntax: "<percentage>";
+    inherits: false; initial-value: 75%; }
+@keyframes edit {
+    -25% { --rotate: 5deg; }
+    0% { --wave-1: 0; --wave-2: 50%; }
+    25% { --rotate: -5deg }
+    50% { --wave-1: 50%; --wave-2: 100%; }
+    75% { --rotate: 5deg; }
+    100% { --wave-1: 0; --wave-2: 50%; }
+    125% { --rotate: -5deg; }
+}
 article {
+    --ease: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    border: 1px solid #FFF1; border-radius: 8px;
+    & figure img { border-radius: 4px; }
     background-image: linear-gradient(to bottom right, transparent,
         var(--stop-1), #FFF1,
         var(--stop-2), transparent);
+    background-size: cover;
+    transform-origin: left;
+    --time: 200ms;
     transition:
-        transform 200ms var(--trans), filter 200ms var(--trans),
-        --stop-1 300ms var(--trans), --stop-2 300ms var(--trans)
+        transform var(--time) var(--ease),
+        filter var(--time) var(--ease),
+        --stop-1 calc(var(--time) * 1.5) var(--ease),
+        --stop-2 calc(var(--time) * 1.5) var(--ease)
         !important;
     &:hover {
         z-index: 1;
         --stop-1: 50%; --stop-2: 90%;
-        background-size: cover;
-        transform: skew(1deg, 1deg) scale(1.05) translate(2.5%, 2.5%);
+        transform: skewX(2deg) scale(1.05);
         filter: drop-shadow(-2px -4px 8px #0004);
+    }
+    &.editing:not(.reply-form) {
+        border-color: #9b89ff61 !important;
+        background-image: linear-gradient(
+            calc(180deg + var(--rotate)),
+            #5a43dd61 0%, #5a43dd61 var(--wave-1),
+            #7c65ff61 var(--wave-2), #7c65ff61 100%
+        );
+        animation: edit 500ms linear infinite;
     }
 }
