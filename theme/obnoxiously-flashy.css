@@ -39,6 +39,13 @@ article {
         transform: skewX(2deg) scale(1.05);
         filter: drop-shadow(-2px -4px 8px #0004);
     }
+    &.quoted-me {
+        background-color: #341d27;
+    }
+    &.my-post {
+        background-color: #221d34;
+        border-left: 2px solid #5131cf !important;
+    }
     &.editing:not(.reply-form:not(.my-post)) {
         border-color: #9b89ff61 !important;
         background-image: linear-gradient(
