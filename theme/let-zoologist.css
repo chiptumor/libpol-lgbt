@@ -1,27 +1,22 @@
 @property --size {
     syntax: "<length>";
-    inherits: false;
+    inherits: true;
     initial-value: 200px;
 }
 @keyframes let {
     from { --size: 200px }
-    to   { --size: calc(200px * 5) }
+    to   { --size: 1000px }
 }
-@keyframes opacity { from { opacity: 0 } to { opacity: 1 } }
-figure.bflag-glegle :has(> img[src="https://jej.lol/posts/26005.png"]) {
+article.bflag-glegle:has(a[href*="zoologist"], a[href$="q=let"]) {
+    max-width: none !important;
     --anim: 300s linear forwards;
     animation: let var(--anim);
-    position: relative;
-    &::after {
-        content: "She's gonna get you.";
-        color: white; font-size: calc(var(--size) / 12.5);
-        display: flex; justify-content: center; align-items: center;
-        width: 100%; height: 100%;
-        position: absolute; top: 0; left: 0;
-        animation: opacity var(--anim);
-    }
-    & > img {
-        max-width:  var(--size) !important;
-        max-height: var(--size) !important;
+    & .post-container {
+        max-width: none !important;
+        max-height: none !important;
+        & img {
+            max-width:  var(--size) !important;
+            max-height: var(--size) !important;
+        }
     }
 }
