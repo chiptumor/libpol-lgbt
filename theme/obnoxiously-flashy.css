@@ -41,6 +41,7 @@ article {
     }
     &.quoted-me {
         background-color: #341d27;
+        border-left: 2px solid #c52968 !important;
     }
     &.my-post {
         background-color: #221d34;
