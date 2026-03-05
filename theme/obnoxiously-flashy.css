@@ -47,6 +47,6 @@ article {
             #7c65ff61 var(--wave-2), #7c65ff61 100%
         );
         animation: edit 500ms linear infinite;
-        & .user-name::after { content: "is typing..."; }
+        & .user-name::after { content: " is typing..."; }
     }
 }
