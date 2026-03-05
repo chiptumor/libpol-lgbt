@@ -39,7 +39,7 @@ article {
         transform: skewX(2deg) scale(1.05);
         filter: drop-shadow(-2px -4px 8px #0004);
     }
-    &.editing:not(.reply-form) {
+    &.editing:not(.reply-form:not(.my-post)) {
         border-color: #9b89ff61 !important;
         background-image: linear-gradient(
             calc(180deg + var(--rotate)),
@@ -47,5 +47,6 @@ article {
             #7c65ff61 var(--wave-2), #7c65ff61 100%
         );
         animation: edit 500ms linear infinite;
+        & .user-name::after { content: "is typing..."; }
     }
 }
