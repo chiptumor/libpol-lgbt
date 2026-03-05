@@ -8,7 +8,7 @@
     to   { --size: calc(200px * 5) }
 }
 @keyframes opacity { from { opacity: 0 } to { opacity: 1 } }
-figure :has(> img[src="https://jej.lol/posts/26005.png"]) {
+figure.bflag-glegle :has(> img[src="https://jej.lol/posts/26005.png"]) {
     --anim: 300s linear forwards;
     animation: let var(--anim);
     position: relative;
