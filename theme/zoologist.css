@@ -3,14 +3,14 @@
     inherits: true;
     initial-value: 200px;
 }
-@keyframes let {
+@keyframes grow {
     from { --size: 200px }
     to   { --size: 1000px }
 }
 article.bflag-glegle:has(a[href*="zoologist"], a[href$="q=let"]) {
     max-width: none !important;
     --anim: 300s linear forwards;
-    animation: let var(--anim);
+    animation: grow var(--anim);
     & .post-container {
         max-width: none !important;
         max-height: none !important;
