@@ -1,0 +1,11 @@
+@keyframes c{50%{content:"▂"}}
+article.editing:not(.reply-form) blockquote {
+  font-family: Fira Mono;
+  &::after {
+    content: "█";
+    animation: c 1s steps(1) infinite
+  }
+}
+article.reply-form textarea {
+  font-family: Fira Mono;
+}
