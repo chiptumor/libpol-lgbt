@@ -1,0 +1,11 @@
+#thread-container > article.bflag-zoologist {
+  overflow: hidden;
+  &::before { content: "";
+    opacity: 0.02; pointer-events: none;
+    position: absolute; left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-image: url(https://jej.lol/posts/32204.png);
+    background-size: cover;
+    background-position: center;
+  }
+}
