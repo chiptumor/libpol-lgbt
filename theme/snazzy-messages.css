@@ -1,25 +1,21 @@
 @keyframes slide {
-    from { transform: translateX(-100%) }
-    to   { transform: translateX(0) }
+  from { transform: translateX(-100%) }
+  to   { transform: translateX(0) }
 }
 @keyframes send {
-    from { transform: scale(1.1) }
-    to   { transform: scale(1) }
+  from { transform: scale(1.1) }
+  to   { transform: scale(1) }
 }
 article {
-    --trans: cubic-bezier(0.230, 1.000, 0.320, 1.000);
-    animation: slide 500ms var(--trans);
-    &:not(.editing) {
-        animation: send 250ms var(--trans);
-        & > .post-container:not(:has(> figure)):has(> blockquote:empty) {
-            width: 100%;
-            & > blockquote {
-                width: 100%; display: flex; justify-content: center;
-                &::before {
-                    content: "\266A\00A0\00A0\00A0\266A\00A0\00A0\00A0\266A" !important;
-                    color: #FFF4; display: block; transform: scale(1.25);
-                }
-            }
-        }
-    }
-}
+  --trans: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+  animation: slide 500ms var(--trans);
+  &:not(.editing):not(.transformed) {
+    animation: send 250ms var(--trans);
+    & > .post-container:not(:has(> figure)):has(> blockquote:empty) {
+      width: 100%;
+      & > blockquote {
+        width: 100%; display: flex; justify-content: center;
+        &::before {
+          content: "\266A\00A0\00A0\00A0\266A\00A0\00A0\00A0\266A" !important;
+          color: #FFF4; display: block; transform: scale(1.25);
+}}}}}
